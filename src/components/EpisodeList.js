@@ -26,7 +26,7 @@ export default function EpisodeList(props) {
 
       <h2>TODO: `array.map()` over your state here!</h2>
       {episodes.map(episode => (
-        <EpisodeCard key={episode.id} {...episode}/>
+        <EpisodeCard key={episode.id} name={episode}/>
       ))}
     </section>
   );

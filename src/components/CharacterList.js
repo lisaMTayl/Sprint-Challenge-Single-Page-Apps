@@ -17,13 +17,13 @@ export default function CharacterList() {
         console.log(setCharacters);
       })
       .catch(error => {
-        console.error(error);
+        console.log(error);
       });
   }, []);
 
   return (
     <section className='character-list grid-view'>
-      {characters.map(character => <CharacterCard key={character.id} {...character}/> )}
+      {characters.map(character => <CharacterCard key={character.id} name={character}/> )}
     </section>
   )
 
