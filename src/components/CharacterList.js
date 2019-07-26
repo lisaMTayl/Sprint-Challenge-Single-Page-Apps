@@ -26,7 +26,7 @@ export default function CharacterList() {
 
       <h2>TODO: `array.map()` over your state here!</h2>
       {characters.map(character => (
-      <CharacterCard key={character.name} info={character}/>
+      <CharacterCard key={character.id} charName={character.name}/>
     ))}
   </section>
 );
