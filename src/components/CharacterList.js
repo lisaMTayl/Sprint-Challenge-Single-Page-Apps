@@ -5,14 +5,14 @@ import CharacterCard from "./CharacterCard";
 
 export default function CharacterList() {
     // TODO: Add useState to track data from useEffect
-  const [characters, setCharacters] = useState();
+  const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
     // TODO: Add AJAX/API Request here - must run in `useEffect`
     axios
       .get(`https://rickandmortyapi.com/api/character/`)
     //  Important: verify the 2nd `useEffect` parameter: the dependencies array!
-      .then(response => {
+      .then(response=> {
         setCharacters(response.data.results);
         console.log(setCharacters);
       })
@@ -23,11 +23,8 @@ export default function CharacterList() {
 
   return (
     <section className='character-list grid-view'>
+      {characters.map(character => <CharacterCard key={character.id} {...character}/> )}
+    </section>
+  )
 
-      <h2>TODO: `array.map()` over your state here!</h2>
-      {characters.map(character => (
-      <CharacterCard key={character.id} charName={character.name}/>
-    ))}
-  </section>
-);
 }
