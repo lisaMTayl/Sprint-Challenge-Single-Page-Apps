@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import CharacterCard from "./CharacterCard";
 
-export default function CharacterList() {
-    // TODO: Add useState to track data from useEffect
+export default function CharacterList( ) {
+
   const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
@@ -19,11 +19,11 @@ export default function CharacterList() {
       .catch(error => {
         console.log(error);
       });
-  }, []);
+  }, [characters]);
 
   return (
     <section className='character-list grid-view'>
-      {characters.map(character => <CharacterCard key={character.id} name={character}/> )}
+      {characters.map(character => <CharacterCard key={character} character={character}/> )}
     </section>
   )
 

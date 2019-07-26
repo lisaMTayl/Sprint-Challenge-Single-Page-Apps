@@ -1,33 +1,30 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
+import 'semantic-ui-css/semantic.min.css'
+import { Card, Icon, Image } from 'semantic-ui-react'
 
-const useStyles = makeStyles({
-  card: {
-    maxWidth: 345,
-  },
-  media: {
-    height: 140,
-  },
-});
 
-export default function CharacterCard ({ image, name, status, species, origin, location, episodes }) {
-  const classes = useStyles();
+export default function CharacterCard (props) {
   return (
-
-    <Card className={classes.card}>
-      <CardContent
-        className={classes.media}
-          image={image}
-          title={name}
-    />
-    </Card>
+    <Card>
+      <Card.Content className="content">
+    <Image src={props.character.image} wrapped ui={false} />
+        <a className="header">{props.character.name}</a>
+        <div className="meta">
+          <span className="date">${props.character.status}</span>
+        </div>
+        <div className="description">
+          <span className="description">Location: {props.character.location}</span>
+          <span className="description">Origin: {props.character.origin}</span>
+        </div>
+      <div className="extra content">
+        <a>
+          <i className="episodes icon">Episodes</i>
+        </a>
+      </div>
+      </Card.Content>
+      </Card>
 
   )
 }
+
+
