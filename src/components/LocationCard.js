@@ -12,8 +12,8 @@ export default function LocationCard (props) {
         {props.dimension}
       </Card.Description>
     </Card.Content>
-    <Card.Content extra>
-  {`Residents: ${props.residents.length}`}
+    <Card.Content>
+      <div className="ui bottom right attached label">Residents: {props.residents.length}</div>
 </Card.Content>
     </Card>
 

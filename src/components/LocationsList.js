@@ -28,6 +28,8 @@ export default function LocationsList() {
       {locations.map(location => (
         <LocationCard key={location.id}
                       name={location.name}
+                      type={location.type}
+                      dimension={location.dimension}
                       residents={location.residents}/>
        ))}
     </section>

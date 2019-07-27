@@ -16,7 +16,7 @@ export default function CharacterList( ) {
 
         console.log(setCharacters);
         console.log("this one console thing",response.data);
-        setCharacters(response.data.results); })
+        setCharacters(response.data.results);})
       .catch(error => {
         console.log(error);
       });
