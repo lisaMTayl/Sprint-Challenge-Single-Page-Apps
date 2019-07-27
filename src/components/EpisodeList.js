@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import EpisodeCard from "./EpisodeCard";
+import LocationCard from "./LocationCard";
+
 
 export default function CharacterList( ) {
 
@@ -15,7 +17,7 @@ export default function CharacterList( ) {
       .then(response=> {
 
         console.log(setEpisodes);
-        console.log("this one console thing",response.data.results);
+        console.log("Episode Data Log",response.data.results);
         setEpisodes(response.data.results); })
       .catch(error => {
         console.log(error);
@@ -23,10 +25,14 @@ export default function CharacterList( ) {
   }, []);
   console.log(episodes);
   return (
-    <section className='character-list grid-view'>
-      {episodes.map(episodes => <EpisodeCard  name={episodes.name}
-                                                episodes={episodes.episodes}
-                                                airDate={episodes.airDate}/> )}
+    <section className='episode-list grid-view'>
+
+
+      {episodes.map(episode => (
+        <EpisodeCard key={episode.id}
+                      name={episode.name}
+                      date={episode.air_date}/>
+      ))}
     </section>
   )
 

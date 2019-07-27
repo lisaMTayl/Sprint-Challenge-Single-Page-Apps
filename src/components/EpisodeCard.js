@@ -7,17 +7,11 @@ export default function EpisodeCard (props) {
     <Card>
       <Card.Content>
         <Card.Header>{props.name}</Card.Header>
-        <Card.Meta>{props.episodes}</Card.Meta>
         <Card.Description>
-          <span>{props.name}</span>
-        </Card.Description>
-        <Card.Description>
-          {props.airDate}
+          Air Date: {props.date}
         </Card.Description>
       </Card.Content>
-      <Card.Content extra>
 
-      </Card.Content>
     </Card>
 
   )

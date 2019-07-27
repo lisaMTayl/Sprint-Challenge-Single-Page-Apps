@@ -18,7 +18,7 @@ export default function CharacterCard (props) {
         <div className="meta">
           <span className="date">{props.characters.status}</span>
         </div>
-        <div className="description">Location: {props.characters.location.name}</div>
+        <div className="description">Location:  {props.characters.location.name}</div>
         <div className="description">Origin: {props.characters.origin.name}</div>
       </div>
 
